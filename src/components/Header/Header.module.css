@@ -1,0 +1,29 @@
+.header {
+    padding: 30px 30px;
+    background-color: #fe4a49;
+    box-shadow: 0px 2px 5px 0px rgba(34, 60, 80, 0.2);
+}
+
+.headerRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav {
+    width: 100%;
+}
+
+.navList {
+    display: flex;
+    justify-content: center;
+    column-gap: 50px;
+}
+
+.navLink {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 23px;
+    cursor: pointer;
+}

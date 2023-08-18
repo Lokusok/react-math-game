@@ -1,0 +1,38 @@
+.riddle {
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 5px 0px rgba(34, 60, 80, 0.2);
+}
+
+.riddleText {
+    font-size: 110px;
+    font-weight: 900;
+    transition-duration: .3s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.riddleFirstValue {
+    color: var(--accent-red);
+}
+
+.riddleSecondValue {
+    color: var(--accent-yellow);
+}
+
+.riddleOperator {
+    color: var(--accent-blue);
+}
+
+.riddleEquals {
+    color: var(--accent-red);
+}
+
+.riddleSymbol {
+    color: var(--accent-grey);
+}
