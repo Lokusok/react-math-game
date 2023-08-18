@@ -34,6 +34,7 @@ function Answers({answers, correct, failClickHandler, successClickHandler, advan
       {
         answers.map((answer, index) =>
           <Answer
+            key={index}
             className={stylesIndexes[index]}
             answerText={answer}
             isCorrect={answer == correct}

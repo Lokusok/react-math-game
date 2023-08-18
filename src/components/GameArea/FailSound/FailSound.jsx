@@ -1,5 +1,5 @@
 import style from './FailSound.module.css';
-import Sound from './../../../assets/wrong.mp3'
+import Sound from './../../../assets/sounds/wrong.mp3'
 
 import {useRef, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';

@@ -1,0 +1,135 @@
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity ease .4s, visibility ease .4s;
+    background-color: rgba(211, 52, 52, .8);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.modalVisible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.options {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 250px;
+    width: 500px;
+    background-color: var(--accent-red-darker);
+    z-index: 100;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
+}
+
+.optionsInner {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+
+.optionsForm {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+
+.optionsValue {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.optionsValueText {
+    margin-left: 10px;
+}
+
+.optionsValueInput {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.optionsApply {
+    margin-top: 20px;
+    width: 50%;
+    align-self: center;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 2px;
+    background-color: #f0f0f0;
+    transition: background-color ease .2s, opacity ease .2s;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+}
+
+.optionsApply:hover {
+    background-color: #d8d8d8;
+}
+
+.optionsApply:active {
+    opacity: .7;
+}
+
+.optionsClose {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    font-weight: 900;
+    font-size: 25px;
+    cursor: pointer;
+    transition: opacity ease .2s;
+    background: none;
+    border: none;
+    appearance: none;
+}
+
+.optionsClose:hover {
+    text-decoration: underline;
+    opacity: .8;
+}
+
+.optionsClose:active {
+    opacity: .5;
+}
+
+@media (max-width: 520px) {
+    .options {
+        width: 400px;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .optionsValue {
+        font-size: 22px;
+    }
+
+    .optionsApply {
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 420px) {
+    .options {
+        width: 350px;
+    }
+}
+
+@media (max-width: 370px) {
+    .options {
+        width: 310px;
+    }
+}

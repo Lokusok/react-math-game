@@ -1,9 +1,6 @@
 import Riddle from './Riddle';
 
-import {useSelector, useDispatch} from 'react-redux';
-import doInstantiateRiddle from './../../../store/actions/instantiate-riddle';
-import doSetNeedUpdate from "../../../store/actions/set-need-update";
-import {random, sample} from 'lodash';
+import {useSelector} from 'react-redux';
 
 
 function RiddleContainer() {

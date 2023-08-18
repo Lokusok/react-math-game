@@ -1,7 +1,7 @@
 import Answers from './Answers';
 import PropTypes from 'prop-types';
 
-import { SET_NEED_UPDATE } from "../../../store/actions/set-need-update";
+import {SET_NEED_UPDATE} from "../../../store/actions/set-need-update";
 import doSetNeedUpdate from "../../../store/actions/set-need-update";
 import {useDispatch} from 'react-redux';
 
@@ -13,7 +13,7 @@ AnswersContainer.propTypes = {
   successClickHandler: PropTypes.func.isRequired,
 };
 
-function AnswersContainer({ answers, correct, failClickHandler, successClickHandler }) {
+function AnswersContainer({answers, correct, failClickHandler, successClickHandler}) {
   const dispatch = useDispatch();
   const advancedSuccessClickHandler = () => {
     dispatch(doSetNeedUpdate(SET_NEED_UPDATE));

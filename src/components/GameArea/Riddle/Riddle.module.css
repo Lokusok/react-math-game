@@ -36,3 +36,25 @@
 .riddleSymbol {
     color: var(--accent-grey);
 }
+
+@media (max-width: 850px) {
+    .riddle {
+        height: 80vh;
+    }
+}
+
+@media (max-width: 780px) {
+    .riddleText {
+        font-size: 100px;
+    }
+}
+
+@media (max-width: 500px) {
+    .riddle {
+        height: 60vh;
+    }
+
+    .riddleText {
+        font-size: 50px;
+    }
+}

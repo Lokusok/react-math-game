@@ -3,3 +3,17 @@
     grid-template-rows: repeat(3, 1fr);
     grid-row-gap: 15px;
 }
+
+@media (max-width: 850px) {
+    .answers {
+        grid-template-rows: none;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .answers {
+        grid-template-columns: 1fr;
+    }
+}

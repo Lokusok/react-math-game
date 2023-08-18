@@ -1,53 +1,38 @@
 import GameArea from './GameArea';
+import PropTypes from 'prop-types';
 
 import {useSelector, useDispatch} from 'react-redux';
-import {random, sample} from "lodash";
+import {random} from "lodash";
 import doInstantiateRiddle from "../../store/actions/instantiate-riddle";
 import doToggleSound from "../../store/actions/toggle-sound";
 import doInstantiateAnswers from "../../store/actions/instantiate-answers";
 
+import {makeRiddle, makeAnswers} from "../../utils";
 
-function GameAreaContainer() {
+
+GameAreaContainer.propTypes = {
+  operator: PropTypes.string.isRequired,
+};
+
+function GameAreaContainer({operator}) {
   const dispatch = useDispatch();
+  const options = useSelector((state) => state.options);
   const needUpdate = useSelector((state) => state.riddle.needUpdate);
-  const operators = ['+', '-', '*', '/'];
-  const instantiateObject = {
-    firstValue: random(0, 10), secondValue: random(0, 10), operator: sample(operators), correct: 8
+  const stateOperator = useSelector((state) => state.riddle.operator);
+
+  let instantiateObject = {
+    firstValue: random(0, 10), secondValue: random(0, 10), operator: operator, correct: null
   };
   instantiateObject.current = instantiateObject.firstValue + instantiateObject.secondValue;
+  instantiateObject = makeRiddle(options, instantiateObject, operator);
 
-  if (instantiateObject.operator === '+') {
-    instantiateObject.correct = instantiateObject.firstValue + instantiateObject.secondValue;
-  } else if (instantiateObject.operator === '-') {
-    instantiateObject.correct = instantiateObject.firstValue - instantiateObject.secondValue;
-  } else if (instantiateObject.operator === '*') {
-    instantiateObject.correct = instantiateObject.firstValue * instantiateObject.secondValue;
-  } else if (instantiateObject.operator === '/') {
-    while (instantiateObject.secondValue === 0) {
-      instantiateObject.secondValue = random(0, 10);
-    }
-
-    instantiateObject.correct = Math.trunc((instantiateObject.firstValue / instantiateObject.secondValue) * 100) / 100;
-  }
-
-  if (needUpdate) {
+  if (needUpdate || (stateOperator !== operator)) {
     dispatch(doInstantiateRiddle(instantiateObject));
   }
 
   const answers = useSelector((state) => state.riddle.numbers);
   const correct = useSelector((state) => state.riddle.correct);
-  const randomNumbers = [];
-
-  for (let i = 0; i < 3; i++) {
-    let randomValue = random(0, 10);
-
-    while (randomNumbers.includes(randomValue)) {
-      randomValue = random(0, 10);
-    }
-
-    randomNumbers.push(randomValue);
-  }
-  randomNumbers[random(0, randomNumbers.length - 1)] = correct;
+  const randomNumbers = makeAnswers(options, [], operator, correct);
 
   const failClickHandler = () => {
     dispatch(doToggleSound(true));
@@ -57,7 +42,7 @@ function GameAreaContainer() {
     dispatch(doInstantiateAnswers(randomNumbers));
   };
 
-  if (needUpdate) {
+  if (needUpdate || (stateOperator !== operator)) {
     dispatch(doInstantiateAnswers(randomNumbers));
   }
 
