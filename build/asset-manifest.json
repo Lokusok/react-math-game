@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.a3d895a9.css",
-    "main.js": "/static/js/main.44666862.js",
+    "main.js": "/static/js/main.69b79540.js",
     "static/media/luckiestguy.otf": "/static/media/luckiestguy.d7db89db63a10e70e9ac.otf",
     "static/media/luckiestguy.ttf": "/static/media/luckiestguy.0116c45aa6fa6812c86b.ttf",
     "static/media/wrong.mp3": "/static/media/wrong.ed7976943b9e49757ec3.mp3",
-    "static/media/options.svg": "/static/media/options.dc7d6d2d576d35f72d96414f0d908afd.svg",
+    "static/media/options.svg": "/static/media/options.ebe9a322b4e7d46436b4c910fdf63981.svg",
     "index.html": "/index.html",
-    "static/media/close.svg": "/static/media/close.95c22a2c5a8a1a5d53019a8054a71942.svg",
+    "static/media/close.svg": "/static/media/close.ca1acd5cfdba02070b5ddf0bce1e6600.svg",
     "main.a3d895a9.css.map": "/static/css/main.a3d895a9.css.map",
-    "main.44666862.js.map": "/static/js/main.44666862.js.map"
+    "main.69b79540.js.map": "/static/js/main.69b79540.js.map"
   },
   "entrypoints": [
     "static/css/main.a3d895a9.css",
-    "static/js/main.44666862.js"
+    "static/js/main.69b79540.js"
   ]
 }
